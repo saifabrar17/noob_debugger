@@ -78,10 +78,18 @@ const initialCountListener = function () {
 };
 
 function addRecordHandler() {
-  const name = document.getElementById("name").value = ''; //claearing previous input data
+  // const name = document.getElementById("name").value;
 
-  const salary = document.getElementById("salary").value = '';
+  // const salary = document.getElementById("salary").value;
+  const nameX = document.getElementById("name");
+  const salaryX = document.getElementById("salary");
 
+  const name = nameX.value;
+
+  const salary = salaryX.value;
+
+  salaryX.value = '';
+  nameX.value = '';
 
   if (!name || !salary) {
     showDataError(name, salary);
@@ -90,6 +98,7 @@ function addRecordHandler() {
 
   // addRecord(name, !salary); //bug 1
   addRecord(name, salary); //bug 1 fixed
+
 }
 
 function addRecord(name, salary) {
