@@ -188,13 +188,7 @@ const showRecordCount = function (data) {
 
   document.getElementById("numberOfRecords").innerText = data.length;
 
-  dlg.dialog({
-    buttons: {
-      Ok: function () {
-        $(this).dialog("close");
-      },
-    },
-  });
+
 };
 
 const anotherRecordCountHandler = function anotherRecordCountHandler(e) {
