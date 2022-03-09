@@ -63,9 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
   window.setTimeout(function () {
-    document
-      .getElementById("recordCount")
-      .setAttribute("class", "btn btn-success");
+    document.getElementById("recordCount").setAttribute("class", "btn btn-success");
   }, 2000);
 });
 
@@ -80,8 +78,10 @@ const initialCountListener = function () {
 };
 
 function addRecordHandler() {
-  const name = document.getElementById("name").value;
-  const salary = document.getElementById("salary").value;
+  const name = document.getElementById("name").value = ''; //claearing previous input data
+
+  const salary = document.getElementById("salary").value = '';
+
 
   if (!name || !salary) {
     showDataError(name, salary);
@@ -116,7 +116,7 @@ function secondHandler(e) {
 const showLastItem = function () {
   const items = salary_data;
   let lastKey;
-  for (const key in items){
+  for (const key in items) {
     lastKey = key;
   };
   const lastItem = items[lastKey];
@@ -235,3 +235,4 @@ const uniquifyNames = function (items) {
     return item;
   });
 };
+
