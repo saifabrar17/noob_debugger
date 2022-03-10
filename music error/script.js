@@ -6,6 +6,7 @@ const handleSearch = () => {
   const keyword = elementById("keyword");
   
   const url = `https://theaudiodb.com/api/v1/json/2/search.php?s=${keyword.value}`;
+  keyword.value = '';
   // console.log(keyword.value);
   // console.log(url);
   fetch(url)
@@ -16,6 +17,7 @@ const handleSearch = () => {
 const showArtists = (data) => {
   const artistContainer = elementById("artists");
   // console.log(artistContainer);
+  artistContainer.textContent = '';
   data?.artists?.forEach((artist) => {
     const div = document.createElement("div");
     div.classList.add("artist-card");
